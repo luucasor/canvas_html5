@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Processando o Canvas na seção HEAD</title>
+        <script>
+            window.onload = function(){
+                var canvas = document.getElementById('meu_canvas');
+                var context = canvas.getContext('2d');
+                
+                //----------------------------------------------------
+                //Iniciar caminho (apaga desenhos anteriores), primeiro arco
+                context.beginPath();
+                
+                
+                //configurar linha
+                context.fillStyle = 'gray';
+                context.strokeStyle = 'black';
+                context.lineWidth = 2;
+                
+                //desenha
+                context.arc(50, 50, 40, 90*Math.PI/180, 270*Math.PI/180, false);
+                
+                //preenchimento
+                context.fill();
+                //contorno
+                context.stroke();
+                
+                //----------------------------------------------------
+                //Iniciar caminho (apaga desenhos anteriores), novo arco invertido
+                context.beginPath();
+                context.arc(150, 50, 40, 90*Math.PI/180, 270*Math.PI/180, true);
+                context.fill();
+                context.stroke();
+                
+                //----------------------------------------------------
+                //Iniciar caminho (apaga desenhos anteriores), novo arco completo
+                context.beginPath();
+                context.arc(250, 50, 40, 0, 2*Math.PI);
+                context.fill();
+                context.stroke();
+                
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="meu_canvas" width="300" height="300"></canvas>
+    </body>
+</html>
