@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Processando o Canvas na seção HEAD</title>
+        <script>
+            window.onload = function(){
+                var canvas = document.getElementById('meu_canvas');
+                var context = canvas.getContext('2d');
+                
+                //Iniciar caminho (apaga desenhos anteriores)
+                context.beginPath();
+                
+                //desenhar a estrela
+                context.moveTo(75, 250);
+                context.lineTo(150, 50);
+                context.lineTo(225, 250);
+                context.lineTo(50, 120);
+                context.lineTo(250, 120);
+                context.lineTo(75, 250);
+                
+                //configurar linha
+                context.lineWidth = 2;
+                context.strokeStyle = 'red';
+                
+                //traçar as linhas do caminho
+                context.stroke();
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="meu_canvas" width="300" height="300"></canvas>
+    </body>
+</html>
